@@ -1,0 +1,5 @@
+_site/
+.firebase/
+.jekyll-cache/
+vendor/
+node_modules/

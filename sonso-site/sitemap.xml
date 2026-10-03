@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- EDIT: add a <url> entry for every new page or article -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://sonso.co.in/</loc><lastmod>2026-10-03</lastmod><priority>1.0</priority></url>
+  <url><loc>https://sonso.co.in/services</loc><lastmod>2026-10-03</lastmod><priority>0.9</priority></url>
+  <url><loc>https://sonso.co.in/services/build</loc><lastmod>2026-10-03</lastmod><priority>0.9</priority></url>
+  <url><loc>https://sonso.co.in/services/automate</loc><lastmod>2026-10-03</lastmod><priority>0.9</priority></url>
+  <url><loc>https://sonso.co.in/services/grow</loc><lastmod>2026-10-03</lastmod><priority>0.9</priority></url>
+  <url><loc>https://sonso.co.in/services/measure</loc><lastmod>2026-10-03</lastmod><priority>0.9</priority></url>
+  <url><loc>https://sonso.co.in/work</loc><lastmod>2026-10-03</lastmod><priority>0.8</priority></url>
+  <url><loc>https://sonso.co.in/work/shehr-festival</loc><lastmod>2026-10-03</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sonso.co.in/work/gobig-hospitality</loc><lastmod>2026-10-03</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sonso.co.in/work/marshal</loc><lastmod>2026-10-03</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sonso.co.in/about</loc><lastmod>2026-10-03</lastmod><priority>0.6</priority></url>
+  <url><loc>https://sonso.co.in/insights</loc><lastmod>2026-10-03</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sonso.co.in/insights/website-visitors-but-no-enquiries</loc><lastmod>2026-10-03</lastmod><priority>0.6</priority></url>
+  <url><loc>https://sonso.co.in/insights/ads-report-clicks-not-customers</loc><lastmod>2026-10-03</lastmod><priority>0.6</priority></url>
+  <url><loc>https://sonso.co.in/insights/signs-you-have-outgrown-spreadsheets</loc><lastmod>2026-10-03</lastmod><priority>0.6</priority></url>
+  <url><loc>https://sonso.co.in/insights/what-a-management-dashboard-needs</loc><lastmod>2026-10-03</lastmod><priority>0.6</priority></url>
+  <url><loc>https://sonso.co.in/contact</loc><lastmod>2026-10-03</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sonso.co.in/book</loc><lastmod>2026-10-03</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sonso.co.in/privacy</loc><lastmod>2026-10-03</lastmod><priority>0.2</priority></url>
+  <url><loc>https://sonso.co.in/terms</loc><lastmod>2026-10-03</lastmod><priority>0.2</priority></url>
+</urlset>

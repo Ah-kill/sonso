@@ -1,0 +1,108 @@
+---
+layout: default
+title: "Contact SoNSo | Tell Us What's Slowing Your Business Down"
+description: "Send SoNSo a message about your website, automation, ads or dashboards, or book a free 30-minute call. Reach us by email, phone or WhatsApp."
+canonical_path: "/contact"
+page_id: contact
+---
+
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Contact</p>
+    <h1 class="h1">Tell us what's slowing your business down.</h1>
+    <p class="lede">Send a short message and we'll reply by email, or skip straight to a free 30-minute call.</p>
+  </div>
+</section>
+
+<section class="section section--tight" style="padding-top:0">
+  <div class="container contact-layout">
+    <div>
+      <form class="form" data-lead-form novalidate>
+        <div class="form-row">
+          <div class="field">
+            <label for="f-name">Name</label>
+            <input class="input" id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-error">
+            <span class="field-error" id="f-name-error" hidden>Enter your name.</span>
+          </div>
+          <div class="field">
+            <label for="f-email">Work email</label>
+            <input class="input" id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="f-email-error">
+            <span class="field-error" id="f-email-error" hidden>Enter an email address like name@company.com.</span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="f-company">Company <span class="opt">(optional)</span></label>
+            <input class="input" id="f-company" name="company" type="text" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="f-phone">Phone or WhatsApp <span class="opt">(optional)</span></label>
+            <input class="input" id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="Include country code">
+          </div>
+        </div>
+        <fieldset class="field">
+          <legend>What do you need help with? <span class="opt">(tick any)</span></legend>
+          <div class="choice-grid">
+            <label class="choice" data-stage="build"><input type="checkbox" name="stage" value="build"><span>Build: website</span></label>
+            <label class="choice" data-stage="automate"><input type="checkbox" name="stage" value="automate"><span>Automate: CRM and workflows</span></label>
+            <label class="choice" data-stage="grow"><input type="checkbox" name="stage" value="grow"><span>Grow: ads and leads</span></label>
+            <label class="choice" data-stage="measure"><input type="checkbox" name="stage" value="measure"><span>Measure: dashboards</span></label>
+          </div>
+        </fieldset>
+        <div class="field">
+          <label for="f-budget">Budget range <span class="opt">(optional)</span></label>
+          <select class="select" id="f-budget" name="budget">
+            <option value="">Prefer not to say</option>
+            <option>Under US$5,000</option>
+            <option>US$5,000–15,000</option>
+            <option>US$15,000–50,000</option>
+            <option>Over US$50,000</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-message">What's going on?</label>
+          <textarea class="textarea" id="f-message" name="message" required aria-describedby="f-message-error" placeholder="For example: our ads bring leads, but nobody follows up fast enough and we can't see which campaigns lead to sales."></textarea>
+          <span class="field-error" id="f-message-error" hidden>Tell us a little about what you need.</span>
+        </div>
+        <div class="hp" aria-hidden="true">
+          <label for="f-website">Leave this empty</label>
+          <input id="f-website" name="website_url" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <input type="hidden" name="page" value="">
+        <input type="hidden" name="utm_source" value="">
+        <input type="hidden" name="utm_campaign" value="">
+        <p class="form-status" data-form-status role="alert" hidden></p>
+        <div class="btn-row">
+          <button class="btn btn-primary btn-lg" type="submit">Send message</button>
+          <p class="form-note">We use your details only to reply. See our <a href="/privacy">privacy policy</a>.</p>
+        </div>
+      </form>
+      <div class="form-success" data-form-success tabindex="-1" hidden>
+        <h2 class="h3">Message sent. Thank you.</h2>
+        <p>We'll reply by email. If it's urgent, book a call now and pick a time that suits you.</p>
+        <a class="btn btn-primary" href="/book">Book a call now</a>
+      </div>
+    </div>
+
+    <aside class="contact-side" aria-label="Other ways to reach us">
+      <div class="contact-method contact-method--primary">
+        <h2>Prefer to talk?</h2>
+        <p>Book a free 30-minute consultation. Times show in your own time zone.</p>
+        <a class="btn btn-primary" href="/book">Book a call</a>
+      </div>
+      <div class="contact-method">
+        <h2>Email</h2>
+        <a href="mailto:{{ site.email }}" data-track="email">{{ site.email }}</a>
+      </div>
+      <div class="contact-method">
+        <h2>Phone</h2>
+        <a href="tel:{{ site.phone_link }}" data-track="call">{{ site.phone_display }}</a>
+      </div>
+      <div class="contact-method">
+        <h2>WhatsApp</h2>
+        <a href="https://wa.me/{{ site.whatsapp }}" target="_blank" rel="noopener" data-track="whatsapp">Message us on WhatsApp</a>
+      </div>
+    </aside>
+  </div>
+</section>

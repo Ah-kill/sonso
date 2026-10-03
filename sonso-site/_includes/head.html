@@ -1,0 +1,45 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title }}</title>
+<meta name="description" content="{{ page.description }}">
+<link rel="canonical" href="{{ site.url }}{{ page.canonical_path }}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SoNSo">
+<meta property="og:title" content="{{ page.title }}">
+<meta property="og:description" content="{{ page.description }}">
+<meta property="og:url" content="{{ site.url }}{{ page.canonical_path }}">
+<meta property="og:image" content="{{ site.url }}/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0F1720">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&display=swap">
+<link rel="stylesheet" href="/assets/css/main.css">
+<!-- EDIT: connection settings live in _config.yml, not here -->
+<script>
+  window.SONSO = {
+    endpoint: "{{ site.lead_form_endpoint }}",
+    email: "{{ site.email }}",
+    whatsapp: "{{ site.whatsapp }}",
+    ga4: "{{ site.ga4_id }}",
+    metaPixel: "{{ site.meta_pixel_id }}",
+    googleAds: "{{ site.google_ads_id }}"
+  };
+  document.documentElement.classList.add('js');
+</script>
+<script src="/assets/js/main.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "SoNSo",
+  "url": "{{ site.url }}",
+  "logo": "{{ site.url }}/assets/img/apple-touch-icon.png",
+  "description": "We build your website, automate your operations, run your advertising and turn your data into dashboards, as one connected system.",
+  "email": "{{ site.email }}",
+  "telephone": "{{ site.phone_link }}",
+  "areaServed": ["India", "United States", "Worldwide"]
+}
+</script>

@@ -1,0 +1,53 @@
+---
+layout: default
+title: "Work: Case Studies | SoNSo"
+description: "How SoNSo connected websites, automation, ads and dashboards for Shehr Festival, Go Big Hospitality and Marshal. Filter by stage."
+canonical_path: "/work"
+page_id: work
+---
+
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Work</p>
+    <h1 class="h1">Projects that connect more than one stage.</h1>
+    <p class="lede">A festival selling tickets online, a hospitality brand tracing ads to revenue, and a manufacturer whose sales team runs on a CRM we built. Filter by the stage you care about.</p>
+  </div>
+</section>
+
+<section class="section section--tight" style="padding-top:0">
+  <div class="container">
+    <div class="filters" role="group" aria-label="Filter case studies by stage" data-filter-group>
+      <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All work</button>
+      <button class="filter-btn" type="button" data-filter="build" data-stage="build" aria-pressed="false">Build</button>
+      <button class="filter-btn" type="button" data-filter="automate" data-stage="automate" aria-pressed="false">Automate</button>
+      <button class="filter-btn" type="button" data-filter="grow" data-stage="grow" aria-pressed="false">Grow</button>
+      <button class="filter-btn" type="button" data-filter="measure" data-stage="measure" aria-pressed="false">Measure</button>
+    </div>
+    <div class="grid grid-3" aria-live="polite">
+      <a class="card case-card" href="/work/shehr-festival" data-filter-item="build automate grow">
+        <div class="stage-tags"><span class="stage-chip" data-stage="build">Build</span><span class="stage-chip" data-stage="automate">Automate</span><span class="stage-chip" data-stage="grow">Grow</span></div>
+        <h2 class="h3">Shehr Festival</h2>
+        <p class="case-industry">Heritage, art and culture walk festival</p>
+        <p>A booking website with payments, an automated WhatsApp and email journey from booking to walk day, and ad campaigns to sell tickets.</p>
+        <dl class="case-measures"><dt>Measured on</dt><dd><span class="measure-pill">Bookings and ticket revenue</span><span class="measure-pill">Cost per booking</span></dd></dl>
+      </a>
+      <a class="card case-card" href="/work/gobig-hospitality" data-filter-item="automate grow measure">
+        <div class="stage-tags"><span class="stage-chip" data-stage="automate">Automate</span><span class="stage-chip" data-stage="grow">Grow</span><span class="stage-chip" data-stage="measure">Measure</span></div>
+        <h2 class="h3">Go Big Hospitality</h2>
+        <p class="case-industry">Hospitality and franchise brand</p>
+        <p>Ads feeding a lead flow into the CRM, WhatsApp and email automation, AI call summaries, and management dashboards across every system.</p>
+        <dl class="case-measures"><dt>Measured on</dt><dd><span class="measure-pill">Lead response time</span><span class="measure-pill">Cost per qualified lead</span><span class="measure-pill">Reporting time saved</span></dd></dl>
+      </a>
+      <a class="card case-card" href="/work/marshal" data-filter-item="automate measure">
+        <div class="stage-tags"><span class="stage-chip" data-stage="automate">Automate</span><span class="stage-chip" data-stage="measure">Measure</span></div>
+        <h2 class="h3">Marshal</h2>
+        <p class="case-industry">Inverter trolley manufacturer, selling by phone</p>
+        <p>A custom CRM for a telecalling sales team, with automated follow-up, dashboards, MIS and forecasting built around revenue targets.</p>
+        <dl class="case-measures"><dt>Measured on</dt><dd><span class="measure-pill">Revenue growth</span><span class="measure-pill">Calls and orders per rep</span><span class="measure-pill">MIS time saved</span></dd></dl>
+      </a>
+    </div>
+    <p class="filter-empty" data-filter-empty hidden>No case studies for this stage yet. <a href="/book">Book a call</a> to hear about relevant work.</p>
+  </div>
+</section>
+
+{% include final-cta.html %}

@@ -1,0 +1,132 @@
+{
+  "hosting": {
+    "public": "_site",
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "redirects": [
+      {
+        "source": "/sono",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/sono/**",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/compare",
+        "destination": "/services",
+        "type": 301
+      },
+      {
+        "source": "/compare.html",
+        "destination": "/services",
+        "type": 301
+      },
+      {
+        "source": "/services/process-automation",
+        "destination": "/services/automate",
+        "type": 301
+      },
+      {
+        "source": "/services/process-automation/**",
+        "destination": "/services/automate",
+        "type": 301
+      },
+      {
+        "source": "/services/operations-integration",
+        "destination": "/services/automate",
+        "type": 301
+      },
+      {
+        "source": "/services/operations-integration/**",
+        "destination": "/services/automate",
+        "type": 301
+      },
+      {
+        "source": "/services/analytics-reporting",
+        "destination": "/services/measure",
+        "type": 301
+      },
+      {
+        "source": "/services/analytics-reporting/**",
+        "destination": "/services/measure",
+        "type": 301
+      },
+      {
+        "source": "/blog/how-to-automate-business-workflows-india",
+        "destination": "/insights/signs-you-have-outgrown-spreadsheets",
+        "type": 301
+      },
+      {
+        "source": "/blog/how-to-automate-business-workflows-india/**",
+        "destination": "/insights/signs-you-have-outgrown-spreadsheets",
+        "type": 301
+      },
+      {
+        "source": "/blog/operations-gap-analysis-guide",
+        "destination": "/insights/signs-you-have-outgrown-spreadsheets",
+        "type": 301
+      },
+      {
+        "source": "/blog/operations-gap-analysis-guide/**",
+        "destination": "/insights/signs-you-have-outgrown-spreadsheets",
+        "type": 301
+      },
+      {
+        "source": "/blog/business-analytics-guide-india",
+        "destination": "/insights/what-a-management-dashboard-needs",
+        "type": 301
+      },
+      {
+        "source": "/blog/business-analytics-guide-india/**",
+        "destination": "/insights/what-a-management-dashboard-needs",
+        "type": 301
+      },
+      {
+        "source": "/blog",
+        "destination": "/insights",
+        "type": 301
+      },
+      {
+        "source": "/blog/**",
+        "destination": "/insights",
+        "type": 301
+      }
+    ],
+    "headers": [
+      {
+        "source": "/assets/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=3600"
+          }
+        ]
+      },
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "X-Content-Type-Options",
+            "value": "nosniff"
+          },
+          {
+            "key": "Referrer-Policy",
+            "value": "strict-origin-when-cross-origin"
+          },
+          {
+            "key": "X-Frame-Options",
+            "value": "SAMEORIGIN"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="wordmark wordmark--light" href="/" aria-label="SoNSo, home">So<span>N</span>So</a>
+        <p>We build your website, automate your operations, run your advertising and turn your data into dashboards, as one connected system.</p>
+        <a class="btn btn-primary btn-sm" href="/book">Book a free 30-minute call</a>
+      </div>
+      <nav class="footer-col" aria-label="Services">
+        <h2 class="footer-title">Services</h2>
+        <ul>
+          <li><a href="/services/build" data-stage="build"><span class="dot"></span>Build: Websites &amp; Digital Solutions</a></li>
+          <li><a href="/services/automate" data-stage="automate"><span class="dot"></span>Automate: Business Automation &amp; Technology</a></li>
+          <li><a href="/services/grow" data-stage="grow"><span class="dot"></span>Grow: Performance Marketing</a></li>
+          <li><a href="/services/measure" data-stage="measure"><span class="dot"></span>Measure: Data &amp; Business Intelligence</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col" aria-label="Company">
+        <h2 class="footer-title">Company</h2>
+        <ul>
+          <li><a href="/work">Work</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/insights">Insights</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="footer-col">
+        <h2 class="footer-title">Talk to us</h2>
+        <ul>
+          <li><a href="mailto:{{ site.email }}" data-track="email">{{ site.email }}</a></li>
+          <li><a href="tel:{{ site.phone_link }}" data-track="call">{{ site.phone_display }}</a></li>
+          <li><a href="https://wa.me/{{ site.whatsapp }}" target="_blank" rel="noopener" data-track="whatsapp">WhatsApp us</a></li>
+        </ul>
+        <!-- EDIT: add office location and social links here once confirmed -->
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span data-year>2026</span> SoNSo. All rights reserved.</p>
+      <ul>
+        <li><a href="/privacy">Privacy policy</a></li>
+        <li><a href="/terms">Terms</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/{{ site.whatsapp }}" target="_blank" rel="noopener" data-track="whatsapp" aria-label="Chat with SoNSo on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5.1 5.2-1.4A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.8.83-3-.2-.31a8.2 8.2 0 1 1 6.97 3.84Zm4.5-6.14c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.55.12-.17.25-.64.8-.78.97-.14.16-.29.18-.53.06a6.7 6.7 0 0 1-1.98-1.22 7.4 7.4 0 0 1-1.37-1.7c-.14-.25 0-.38.11-.5.11-.11.25-.29.37-.43.12-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47a.9.9 0 0 0-.66.31 2.77 2.77 0 0 0-.86 2.06 4.8 4.8 0 0 0 1 2.55c.13.17 1.73 2.64 4.2 3.7.58.25 1.04.4 1.4.52.59.19 1.12.16 1.54.1.47-.07 1.46-.6 1.66-1.17.2-.58.2-1.07.15-1.17-.06-.1-.22-.16-.47-.28Z"/></svg>
+</a>
+
+{% include icons.html %}
