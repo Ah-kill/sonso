@@ -800,7 +800,7 @@ body[data-page="book"] .wa-float { display: none; }
 }
 .book-step2 .book-fallback { margin-top: 0; }
 .book-embed { margin-top: 0; }
-.book-embed iframe { width: 100%; height: 640px; border: 0; border-radius: var(--radius); background: var(--mist); }
+.book-embed iframe { width: 100%; height: 760px; border: 0; border-radius: var(--radius); background: var(--mist); }
 .book-fallback { margin-top: 1.5rem; padding: 1.5rem; border-radius: var(--radius); background: var(--mist); display: grid; gap: 1rem; }
 .book-fallback .btn-row { gap: .6rem; }
 .call-list { display: grid; gap: 1.1rem; margin-top: 2rem; }
@@ -871,3 +871,4 @@ body[data-page="book"] .wa-float { display: none; }
   .book-fallback .btn, .form-handoff .btn { width: 100%; }
   .form-handoff .btn-row { width: 100%; }
 }
+@media (max-width: 599px) { .book-embed iframe { height: 1150px; } }

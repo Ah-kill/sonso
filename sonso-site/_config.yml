@@ -15,11 +15,11 @@ whatsapp: "917416174547"
 # In Google Calendar: open the appointment schedule > Share > "Website embed" > "Inline booking page",
 # and paste only the src="..." URL from the iframe code (it ends in ?gv=true). A plain booking-page
 # link won't load inside the page. Empty = the Book page shows WhatsApp/email instead.
-booking_build: ""
-booking_automate: ""
-booking_grow: ""
-booking_measure: ""
-booking_unsure: ""
+booking_build: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0uMm6NqICAtcgAnd147TVdAVGoKYEyAQBGsSovDsbnrjMrcE1-B6sefU3nclwjmPhLOiyYj94J?gv=true"
+booking_automate: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0uMm6NqICAtcgAnd147TVdAVGoKYEyAQBGsSovDsbnrjMrcE1-B6sefU3nclwjmPhLOiyYj94J?gv=true"
+booking_grow: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0uMm6NqICAtcgAnd147TVdAVGoKYEyAQBGsSovDsbnrjMrcE1-B6sefU3nclwjmPhLOiyYj94J?gv=true"
+booking_measure: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0uMm6NqICAtcgAnd147TVdAVGoKYEyAQBGsSovDsbnrjMrcE1-B6sefU3nclwjmPhLOiyYj94J?gv=true"
+booking_unsure: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0uMm6NqICAtcgAnd147TVdAVGoKYEyAQBGsSovDsbnrjMrcE1-B6sefU3nclwjmPhLOiyYj94J?gv=true"
 
 # Apps Script web app URL (ends in /exec) from apps-script/Code.gs. Empty = the form offers WhatsApp/email to send instead.
 # After changing the script, redeploy the SAME deployment (Manage deployments > Edit > New version) to keep this URL.
