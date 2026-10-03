@@ -6,7 +6,7 @@ title: "SoNSo"
 url: "https://sonso.co.in"
 
 # Bump this whenever CSS or JS changes, so browsers download the new files immediately.
-asset_version: "20261003-2"
+asset_version: "20261003-3"
 
 # Contact details shown across the site
 email: "hello@sonso.co.in"
@@ -20,11 +20,11 @@ phone2_link: "+918686950859"
 # In Google Calendar: open the appointment schedule > Share > "Website embed" > "Inline booking page",
 # and paste only the src="..." URL from the iframe code (it ends in ?gv=true). A plain booking-page
 # link won't load inside the page. Empty = the Book page shows WhatsApp/email instead.
-booking_build: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0uMm6NqICAtcgAnd147TVdAVGoKYEyAQBGsSovDsbnrjMrcE1-B6sefU3nclwjmPhLOiyYj94J?gv=true"
-booking_automate: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0uMm6NqICAtcgAnd147TVdAVGoKYEyAQBGsSovDsbnrjMrcE1-B6sefU3nclwjmPhLOiyYj94J?gv=true"
-booking_grow: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0uMm6NqICAtcgAnd147TVdAVGoKYEyAQBGsSovDsbnrjMrcE1-B6sefU3nclwjmPhLOiyYj94J?gv=true"
-booking_measure: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0uMm6NqICAtcgAnd147TVdAVGoKYEyAQBGsSovDsbnrjMrcE1-B6sefU3nclwjmPhLOiyYj94J?gv=true"
-booking_unsure: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0uMm6NqICAtcgAnd147TVdAVGoKYEyAQBGsSovDsbnrjMrcE1-B6sefU3nclwjmPhLOiyYj94J?gv=true"
+booking_build: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ2W7uO3DmhSkK3l8_Nj7Ac9ExEel0QoQiUibN2Efo_-lur21_Eu10MoAyatf_LQ0QqP-8y8zQbd?gv=true"
+booking_automate: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ2W7uO3DmhSkK3l8_Nj7Ac9ExEel0QoQiUibN2Efo_-lur21_Eu10MoAyatf_LQ0QqP-8y8zQbd?gv=true"
+booking_grow: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ2W7uO3DmhSkK3l8_Nj7Ac9ExEel0QoQiUibN2Efo_-lur21_Eu10MoAyatf_LQ0QqP-8y8zQbd?gv=true"
+booking_measure: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ2W7uO3DmhSkK3l8_Nj7Ac9ExEel0QoQiUibN2Efo_-lur21_Eu10MoAyatf_LQ0QqP-8y8zQbd?gv=true"
+booking_unsure: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ2W7uO3DmhSkK3l8_Nj7Ac9ExEel0QoQiUibN2Efo_-lur21_Eu10MoAyatf_LQ0QqP-8y8zQbd?gv=true"
 
 # Apps Script web app URL (ends in /exec) from apps-script/Code.gs. Empty = the form offers WhatsApp/email to send instead.
 # After changing the script, redeploy the SAME deployment (Manage deployments > Edit > New version) to keep this URL.

@@ -8,18 +8,25 @@ on:
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
+    env:
+      # The deploy step runs only once the Firebase key secret exists (see sonso-site/README.md).
+      HAS_FIREBASE_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_SONSO_CO != '' }}
     defaults:
       run:
         working-directory: sonso-site
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'
           bundler-cache: true
           working-directory: sonso-site
       - run: bundle exec jekyll build # outputs ./_site
+      - name: Skip deploy (no Firebase key yet)
+        if: env.HAS_FIREBASE_KEY != 'true'
+        run: echo "::notice::Build OK. Deploy skipped: add the FIREBASE_SERVICE_ACCOUNT_SONSO_CO secret to deploy from GitHub."
       - uses: FirebaseExtended/action-hosting-deploy@v0
+        if: env.HAS_FIREBASE_KEY == 'true'
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_SONSO_CO }}
