@@ -102,11 +102,20 @@
     ],
     "headers": [
       {
-        "source": "/assets/**",
+        "source": "/assets/**/*.@(css|js)",
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "public, max-age=3600"
+            "value": "no-cache"
+          }
+        ]
+      },
+      {
+        "source": "/assets/img/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=86400"
           }
         ]
       },

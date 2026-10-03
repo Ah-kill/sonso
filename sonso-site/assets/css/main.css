@@ -157,12 +157,18 @@ button, input, select, textarea { font: inherit; color: inherit; }
 /* ---------- Header ---------- */
 .site-header {
   position: sticky; top: 0; z-index: 50;
-  background: rgb(255 255 255 / .88);
-  backdrop-filter: saturate(1.4) blur(14px);
-  -webkit-backdrop-filter: saturate(1.4) blur(14px);
   border-bottom: 1px solid transparent;
   transition: border-color .2s var(--ease), box-shadow .2s var(--ease);
 }
+/* The frosted background lives on a pseudo-element: backdrop-filter on the header itself would make it
+   the containing block for the fixed mobile menu, collapsing the menu to zero height. */
+.site-header::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: rgb(255 255 255 / .88);
+  backdrop-filter: saturate(1.4) blur(14px);
+  -webkit-backdrop-filter: saturate(1.4) blur(14px);
+}
+body.nav-open .site-header::before { background: var(--paper); }
 .site-header.is-scrolled { border-color: var(--line); }
 .header-inner { display: flex; align-items: center; gap: 2rem; height: var(--header-h); }
 
@@ -799,8 +805,9 @@ body[data-page="book"] .wa-float { display: none; }
   color: var(--muted); font-size: .9375rem; text-align: center;
 }
 .book-step2 .book-fallback { margin-top: 0; }
-.book-embed { margin-top: 0; }
-.book-embed iframe { width: 100%; height: 760px; border: 0; border-radius: var(--radius); background: var(--mist); }
+.book-cal { display: grid; gap: 1rem; justify-items: start; padding: 1.5rem; border-radius: var(--radius); background: var(--mist); }
+.book-cal .btn { margin: 0; }
+@media (max-width: 599px) { .book-cal .btn { width: 100%; } }
 .book-fallback { margin-top: 1.5rem; padding: 1.5rem; border-radius: var(--radius); background: var(--mist); display: grid; gap: 1rem; }
 .book-fallback .btn-row { gap: .6rem; }
 .call-list { display: grid; gap: 1.1rem; margin-top: 2rem; }
@@ -871,4 +878,4 @@ body[data-page="book"] .wa-float { display: none; }
   .book-fallback .btn, .form-handoff .btn { width: 100%; }
   .form-handoff .btn-row { width: 100%; }
 }
-@media (max-width: 599px) { .book-embed iframe { height: 1150px; } }
+

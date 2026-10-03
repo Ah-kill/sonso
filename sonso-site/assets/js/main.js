@@ -206,7 +206,7 @@
     if (picker) {
       var embed = $('[data-book-embed]', picker);
       var fallback = $('[data-book-fallback]', picker);
-      var frame = $('iframe', embed);
+      var calLink = $('[data-book-cal-link]', embed);
       var step2 = $('[data-book-step2]', picker);
       var placeholder = $('[data-book-placeholder]', picker);
       function choose(stage, reveal) {
@@ -217,7 +217,9 @@
         step2.classList.add('is-ready');
         var url = input.getAttribute('data-url');
         if (url) {
-          if (frame.src !== url) frame.src = url;
+          // Link to Google's full booking page rather than embedding it: an embedded calendar can't
+          // size itself, which hides the Book button and traps scrolling on phones.
+          calLink.href = url.replace(/[?&]gv=true/, '');
           embed.hidden = false; fallback.hidden = true;
         } else {
           embed.hidden = true; fallback.hidden = false;

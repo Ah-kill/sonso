@@ -35,8 +35,10 @@ page_id: book
           <p>Message us with the topic and a few times that suit you: <a href="https://wa.me/{{ site.whatsapp }}">WhatsApp {{ site.phone_display }}</a> or <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
         </noscript>
 
-        <div class="book-embed" data-book-embed hidden>
-          <iframe title="Choose a time for your consultation" loading="lazy"></iframe>
+        <div class="book-cal" data-book-embed hidden>
+          <p>Pick a time that suits you on our booking calendar. Times show in your own time zone, and you'll get a Google Meet invite by email.</p>
+          <a class="btn btn-primary btn-lg" href="#" data-book-cal-link data-track="booking_calendar" target="_blank" rel="noopener">Choose a time <svg class="icon"><use href="#i-arrow"/></svg></a>
+          <p class="form-note">Opens our Google Calendar booking page in a new tab. Prefer to message? <a href="https://wa.me/{{ site.whatsapp }}" data-track="whatsapp" target="_blank" rel="noopener">WhatsApp us</a>.</p>
         </div>
 
         <div class="book-fallback" data-book-fallback aria-live="polite" hidden>
