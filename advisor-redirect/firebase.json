@@ -1,0 +1,9 @@
+{
+  "hosting": {
+    "site": "sonso-co-57a44",
+    "public": "public",
+    "redirects": [
+      { "source": "**", "destination": "https://sonso.co.in/", "type": 301 }
+    ]
+  }
+}
