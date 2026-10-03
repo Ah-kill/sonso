@@ -88,11 +88,6 @@ page_id: contact
           <p class="form-note">Email app didn't open? Write to us at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
         </div>
       </form>
-      <div class="form-success" data-form-success tabindex="-1" hidden>
-        <h2 class="h3">Message sent. Thank you.</h2>
-        <p>We'll reply by email. If it's urgent, book a call now and pick a time that suits you.</p>
-        <a class="btn btn-primary" href="/book">Book a call now</a>
-      </div>
     </div>
 
     <aside class="contact-side" aria-label="Other ways to reach us">
@@ -108,6 +103,7 @@ page_id: contact
       <div class="contact-method">
         <h2>Phone</h2>
         <a href="tel:{{ site.phone_link }}" data-track="call">{{ site.phone_display }}</a>
+        <a href="tel:{{ site.phone2_link }}" data-track="call">{{ site.phone2_display }}</a>
       </div>
       <div class="contact-method">
         <h2>WhatsApp</h2>

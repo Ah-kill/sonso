@@ -1,0 +1,44 @@
+---
+layout: default
+title: "Thank you | SoNSo"
+description: "Thanks for getting in touch with SoNSo. Here is what happens next, and how to book a free call."
+canonical_path: "/thank-you"
+robots: "noindex, nofollow"
+page_id: thank-you
+---
+
+<!-- Conversion page for the contact form. Track it in GTM with a Page View trigger on Page Path = /thank-you,
+     or with the custom event "generate_lead" (fires only after a real form submission, not on refresh). -->
+<section class="page-hero">
+  <div class="container container--narrow">
+    <p class="eyebrow">Message received</p>
+    <h1 class="h1">Thanks, we've got your message.</h1>
+    <p class="lede">We'll reply by email. If you'd like to talk sooner, book a free 30-minute call and pick a time that suits you.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary btn-lg" href="/book">Book a call now</a>
+      <a class="btn btn-lg" href="/">Back to the homepage</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--mist section--tight" aria-labelledby="next-title">
+  <div class="container container--narrow">
+    <h2 id="next-title" class="h3" style="margin-bottom:2rem">What happens next</h2>
+    <ol class="steps" role="list" style="--cols:3">
+      <li class="step"><h3 class="h4">We read your message</h3><p>The lead for the stage you need looks at what you've sent.</p></li>
+      <li class="step"><h3 class="h4">We reply by email</h3><p>With a few questions, or a clear next step.</p></li>
+      <li class="step"><h3 class="h4">A free 30-minute call</h3><p>If it's useful, we talk it through and you leave knowing where to start.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container container--narrow">
+    <h2 class="h4" style="margin-bottom:1rem">While you wait</h2>
+    <ul class="fit-list">
+      <li><a href="/work">See the work we've done for Shehr Festival, Go Big Hospitality and Marshal</a></li>
+      <li><a href="/insights">Read practical notes on websites, automation, ads and dashboards</a></li>
+      <li>Something urgent? <a href="https://wa.me/{{ site.whatsapp }}" data-track="whatsapp" target="_blank" rel="noopener">WhatsApp us</a> or email <a href="mailto:{{ site.email }}" data-track="email">{{ site.email }}</a></li>
+    </ul>
+  </div>
+</section>

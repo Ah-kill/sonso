@@ -1,14 +1,25 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google Tag Manager (container ID set in _config.yml) -->
+<script>(function(w,d,s,l,i){if(!i)return;w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','{{ site.gtm_id }}');</script>
+<!-- End Google Tag Manager -->
 <title>{{ page.title }}</title>
 <meta name="description" content="{{ page.description }}">
+<meta name="robots" content="{{ page.robots | default: "index, follow" }}">
 <link rel="canonical" href="{{ site.url }}{{ page.canonical_path }}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SoNSo">
 <meta property="og:title" content="{{ page.title }}">
 <meta property="og:description" content="{{ page.description }}">
 <meta property="og:url" content="{{ site.url }}{{ page.canonical_path }}">
-<meta property="og:image" content="{{ site.url }}/assets/img/og.png">
+<meta property="og:image" content="{{ site.url }}{{ page.image | default: "/assets/img/og.png" }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="{{ site.url }}{{ page.image | default: "/assets/img/og.png" }}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0F1720">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
@@ -16,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&display=swap">
-<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/main.css?v={{ site.asset_version }}">
 <!-- EDIT: connection settings live in _config.yml, not here -->
 <script>
   window.SONSO = {
@@ -31,7 +42,7 @@
   // Failsafe: if main.js never loads, drop the "js" class so scroll-reveal content isn't left invisible.
   setTimeout(function () { if (!window.__sonsoReady) document.documentElement.classList.remove('js'); }, 3000);
 </script>
-<script src="/assets/js/main.js" defer></script>
+<script src="/assets/js/main.js?v={{ site.asset_version }}" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -42,6 +53,10 @@
   "description": "We build your website, automate your operations, run your advertising and turn your data into dashboards, as one connected system.",
   "email": "{{ site.email }}",
   "telephone": "{{ site.phone_link }}",
+  "contactPoint": [
+    { "@type": "ContactPoint", "telephone": "{{ site.phone_link }}", "contactType": "sales" },
+    { "@type": "ContactPoint", "telephone": "{{ site.phone2_link }}", "contactType": "sales" }
+  ],
   "areaServed": ["India", "United States", "Worldwide"]
 }
 </script>

@@ -34,6 +34,30 @@ All in `_config.yml`. Empty values switch the feature off safely.
 | `lead_form_endpoint` | Apps Script web app URL (deploy `apps-script/Code.gs`) | The contact form asks the visitor to send via WhatsApp or email, pre-filled |
 | `ga4_id`, `meta_pixel_id`, `google_ads_id` | Tag IDs | No tracking scripts load |
 
+## Tracking (Google Tag Manager)
+
+The GTM container is set by `gtm_id` in `_config.yml`. Add GA4, Google Ads and Meta Pixel tags inside GTM.
+The site pushes these events to the dataLayer, for use as GTM Custom Event triggers:
+
+| Event | When |
+|---|---|
+| `generate_lead` | Contact form sent. Fires on `/thank-you`, once per real submission (or trigger on Page Path = `/thank-you`) |
+| `booking_calendar_open` | Visitor clicked "Choose a time" on /book |
+| `booking_topic` | Visitor picked a topic on /book |
+| `contact_click` | WhatsApp, email or phone link clicked (`method`) |
+| `book_call_click` | Any "Book a call" button clicked |
+
+Bookings happen on Google Calendar's own page, which can't redirect back, so a confirmed booking isn't a site event.
+
+## Releasing CSS or JS changes
+
+Bump `asset_version` in `_config.yml` whenever `main.css` or `main.js` changes, so browsers fetch the new files straight away.
+
+## Insights articles
+
+Copy an existing article in `insights/`, update the front matter (including `image`), add a 1200×630 banner to
+`assets/img/insights/`, add a card at the top of `insights/index.html`, and add the URL to `sitemap.xml`.
+
 ## Build and preview
 
 GitHub Actions builds with Jekyll and deploys automatically (see `/.github/workflows/`):

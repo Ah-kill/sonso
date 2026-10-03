@@ -27,7 +27,10 @@
     fbq('init', cfg.metaPixel); fbq('track', 'PageView');
   }
   function track(name, data) {
-    if (window.gtag) gtag('event', name, data || {});
+    // Google Tag Manager picks these up as custom events (set triggers on the event name in GTM).
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(Object.assign({ event: name }, data || {}));
+    if (window.gtag && (cfg.ga4 || cfg.googleAds)) gtag('event', name, data || {});
     if (window.fbq) fbq('trackCustom', name, data || {});
   }
 
@@ -188,11 +191,11 @@
         btn.disabled = true; btn.textContent = 'Sending…';
         fetch(cfg.endpoint, { method: 'POST', body: new URLSearchParams(data) })
           .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json().catch(function () { return { ok: true }; }); })
-          .then(function () {
-            track('generate_lead', { method: 'contact_form', stage: stages });
-            form.hidden = true;
-            var done = $('[data-form-success]');
-            done.hidden = false; done.focus();
+          .then(function (res) {
+            if (res && res.ok === false) throw new Error(res.error || 'rejected');
+            // The conversion event fires on /thank-you, only when this flag is set (not on refresh or direct visits).
+            try { sessionStorage.setItem('sonso_lead', stages); } catch (e) { /* storage blocked */ }
+            location.href = '/thank-you';
           })
           .catch(function () {
             btn.disabled = false; btn.textContent = 'Send message';
@@ -246,12 +249,20 @@
       if (pre) choose(pre);
     }
 
+    /* ---------- Thank-you page conversion ---------- */
+    if (document.body.getAttribute('data-page') === 'thank-you') {
+      var leadStages = null;
+      try { leadStages = sessionStorage.getItem('sonso_lead'); sessionStorage.removeItem('sonso_lead'); } catch (e) { /* storage blocked */ }
+      if (leadStages !== null) track('generate_lead', { method: 'contact_form', stage: leadStages || 'Not specified' });
+    }
+
     /* ---------- Click tracking ---------- */
     document.addEventListener('click', function (e) {
       var a = e.target.closest && e.target.closest('a');
       if (!a) return;
       var kind = a.getAttribute('data-track');
-      if (kind) track('contact_click', { method: kind });
+      if (kind === 'booking_calendar') track('booking_calendar_open', { location: path });
+      else if (kind) track('contact_click', { method: kind });
       else if (a.getAttribute('href') === '/book' || /^\/book\?/.test(a.getAttribute('href') || '')) track('book_call_click', { location: path });
     });
   });

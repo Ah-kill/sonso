@@ -303,7 +303,8 @@ body.nav-open .site-header::before { background: var(--paper); }
 /* ---------- Cards ---------- */
 .card {
   position: relative; display: flex; flex-direction: column; gap: .75rem;
-  padding: clamp(1.4rem, 2.4vw, 1.9rem);
+  --card-pad: clamp(1.4rem, 2.4vw, 1.9rem);
+  padding: var(--card-pad);
   background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
   transition: border-color .2s var(--ease), box-shadow .2s var(--ease), transform .2s var(--ease);
 }
@@ -879,3 +880,25 @@ body[data-page="book"] .wa-float { display: none; }
   .form-handoff .btn-row { width: 100%; }
 }
 
+
+/* ---------- Article banners and thumbnails ---------- */
+.article-banner { margin-top: -.5rem; margin-bottom: clamp(2.5rem, 5vw, 3.5rem); }
+.article-banner img { width: 100%; max-width: 1040px; height: auto; aspect-ratio: 1200 / 630; border-radius: var(--radius-lg); background: var(--ink); }
+.card-thumb {
+  display: block; width: calc(100% + var(--card-pad) * 2); max-width: none; height: auto; aspect-ratio: 1200 / 630; object-fit: cover;
+  margin: calc(var(--card-pad) * -1) calc(var(--card-pad) * -1) .5rem; border-radius: calc(var(--radius) - 1px) calc(var(--radius) - 1px) 0 0;
+  background: var(--ink);
+}
+.article-card--feature { grid-column: 1 / -1; }
+@media (min-width: 860px) {
+  .article-card--feature { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); column-gap: 2.25rem; align-content: center; }
+  .article-card--feature .card-thumb { grid-row: 1 / span 5; width: calc(100% + var(--card-pad)); margin: calc(var(--card-pad) * -1) 0 calc(var(--card-pad) * -1) calc(var(--card-pad) * -1); height: calc(100% + var(--card-pad) * 2); border-radius: calc(var(--radius) - 1px) 0 0 calc(var(--radius) - 1px); }
+  .article-card--feature > :not(.card-thumb) { align-self: center; }
+  .article-card--feature .h4 { font-size: 1.625rem; }
+}
+.related { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+.related-title { font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--faint); margin-bottom: .75rem; }
+.related ul { list-style: none; padding: 0; display: grid; gap: .6rem; }
+.related a { color: var(--ink); font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--line-strong); line-height: 1.5; }
+.related a:hover { border-color: var(--ink); }
+.contact-method a:not(.btn) + a:not(.btn) { margin-top: .15rem; }

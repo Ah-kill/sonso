@@ -1,6 +1,6 @@
 // Local stand-in for `jekyll build`, for machines without Ruby.
 // Supports only the Liquid used on this site: layouts, {% include file k="v" %},
-// {{ page.x }}, {{ site.x }}, {{ include.x }}, {{ content }}.
+// {{ page.x }}, {{ site.x }}, {{ include.x }}, {{ content }}, and the `| default: "..."` filter.
 // Anything else throws, so the site stays buildable by real Jekyll in GitHub Actions.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -12,7 +12,7 @@ const out = path.join(root, '_site');
 function parseYaml(text) {
   const data = {};
   let listKey = null;
-  for (const raw of text.split(/\r?\n/)) {
+  for (const raw of text.split(/\r*\n/).map((l) => l.replace(/\r+$/, ''))) {
     if (!raw.trim() || raw.trim().startsWith('#')) continue;
     const item = raw.match(/^\s+-\s+(.*)$/);
     if (item && listKey) { data[listKey].push(unquote(item[1])); continue; }
@@ -45,7 +45,8 @@ function render(src, ctx, file) {
   });
   const stray = src.match(/\{%.*?%\}/);
   if (stray) throw new Error(`${file}: unsupported Liquid tag ${stray[0]}`);
-  return src.replace(/\{\{-?\s*([\w.]+)\s*-?\}\}/g, (_, expr) => String(lookup(ctx, expr)))
+  return src.replace(/\{\{-?\s*([\w.]+)\s*(?:\|\s*default:\s*(?:"([^"]*)"|'([^']*)')\s*)?-?\}\}/g,
+    (_, expr, d1, d2) => String(lookup(ctx, expr) || (d1 ?? d2 ?? '')))
     .replace(/\{\{.*?\}\}/g, (m) => { throw new Error(`${file}: unsupported Liquid output ${m}`); });
 }
 

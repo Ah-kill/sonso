@@ -5,11 +5,16 @@
 title: "SoNSo"
 url: "https://sonso.co.in"
 
+# Bump this whenever CSS or JS changes, so browsers download the new files immediately.
+asset_version: "20261003-2"
+
 # Contact details shown across the site
 email: "hello@sonso.co.in"
 phone_display: "+91 74161 74547"
 phone_link: "+917416174547"
 whatsapp: "917416174547"
+phone2_display: "+91 86869 50859"
+phone2_link: "+918686950859"
 
 # Google Calendar appointment schedule embed links, one per routing row in the Technical Spec.
 # In Google Calendar: open the appointment schedule > Share > "Website embed" > "Inline booking page",
@@ -25,7 +30,16 @@ booking_unsure: "https://calendar.google.com/calendar/appointments/schedules/AcZ
 # After changing the script, redeploy the SAME deployment (Manage deployments > Edit > New version) to keep this URL.
 lead_form_endpoint: "https://script.google.com/macros/s/AKfycbx3Z_5GAJe-l58vCOsS_i3ZJAVx5Cycyog459-hAr8_yH5YmtSbzYJCs1YXTaqlgA2f/exec"
 
-# Analytics. Empty = the tag is not loaded.
+# Google Tag Manager container. Manage GA4, Google Ads and Meta Pixel tags inside GTM;
+# The site pushes these dataLayer events (use them as GTM Custom Event triggers):
+#   generate_lead          contact form sent (fires on /thank-you; or trigger on Page Path = /thank-you)
+#   booking_calendar_open  visitor opened the Google booking calendar ("Choose a time")
+#   booking_topic          visitor picked a topic on /book
+#   contact_click          WhatsApp / email / phone link clicked (method = whatsapp|email|call)
+#   book_call_click        any "Book a call" button clicked
+gtm_id: "GTM-KM7J6WWQ"
+
+# Direct analytics tags (optional, only if not managed through GTM). Empty = the tag is not loaded.
 ga4_id: ""
 meta_pixel_id: ""
 google_ads_id: ""
