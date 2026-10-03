@@ -28,6 +28,8 @@
     googleAds: "{{ site.google_ads_id }}"
   };
   document.documentElement.classList.add('js');
+  // Failsafe: if main.js never loads, drop the "js" class so scroll-reveal content isn't left invisible.
+  setTimeout(function () { if (!window.__sonsoReady) document.documentElement.classList.remove('js'); }, 3000);
 </script>
 <script src="/assets/js/main.js" defer></script>
 <script type="application/ld+json">

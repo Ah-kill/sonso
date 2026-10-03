@@ -11,8 +11,10 @@ phone_display: "+91 74161 74547"
 phone_link: "+917416174547"
 whatsapp: "917416174547"
 
-# Google Calendar appointment schedule links (Calendar > Appointment schedule > Share > Booking page link).
-# One per routing row in the Technical Spec. Empty = the Book page shows email/WhatsApp instead.
+# Google Calendar appointment schedule embed links, one per routing row in the Technical Spec.
+# In Google Calendar: open the appointment schedule > Share > "Website embed" > "Inline booking page",
+# and paste only the src="..." URL from the iframe code (it ends in ?gv=true). A plain booking-page
+# link won't load inside the page. Empty = the Book page shows WhatsApp/email instead.
 booking_build: ""
 booking_automate: ""
 booking_grow: ""

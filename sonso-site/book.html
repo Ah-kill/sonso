@@ -8,21 +8,15 @@ page_id: book
 
 <section class="page-hero">
   <div class="container book-layout">
-    <div>
+    <div class="book-intro">
       <p class="eyebrow">Book a call</p>
       <h1 class="h1">Book a free 30-minute consultation.</h1>
       <p class="lede">Tell us what you need help with and pick a time. We'll come prepared.</p>
-      <ul class="call-list" role="list">
-        <li><svg class="icon"><use href="#i-check"/></svg><div><strong>30 minutes on video</strong><span>With a Google Meet link sent in your calendar invite.</span></div></li>
-        <li><svg class="icon"><use href="#i-check"/></svg><div><strong>Two SoNSo leads on the call</strong><span>The lead for your stage, plus a second lead for the connected view.</span></div></li>
-        <li><svg class="icon"><use href="#i-check"/></svg><div><strong>A clear next step</strong><span>You leave knowing which stage to fix first, whether or not you work with us.</span></div></li>
-        <li><svg class="icon"><use href="#i-check"/></svg><div><strong>Free, no obligation</strong><span>We don't quote prices on the site; we discuss them on the call.</span></div></li>
-      </ul>
     </div>
 
     <div class="book-panel" data-book>
       <fieldset class="field">
-        <legend class="h4" style="margin-bottom:1rem">What do you need help with?</legend>
+        <legend class="book-step"><span class="book-step-num" aria-hidden="true">1</span>What do you need help with?</legend>
         <div class="choice-grid">
           <label class="choice" data-stage="build"><input type="radio" name="topic" value="build" data-label="Build: our website" data-url="{{ site.booking_build }}"><span>Our website <small>Build</small></span></label>
           <label class="choice" data-stage="automate"><input type="radio" name="topic" value="automate" data-label="Automate: CRM and workflows" data-url="{{ site.booking_automate }}"><span>CRM, automation and workflows <small>Automate</small></span></label>
@@ -32,18 +26,35 @@ page_id: book
         </div>
       </fieldset>
 
-      <div class="book-embed" data-book-embed hidden>
-        <iframe title="Choose a time for your consultation" loading="lazy"></iframe>
-      </div>
+      <div class="book-step2" data-book-step2 tabindex="-1">
+        <p class="book-step"><span class="book-step-num" aria-hidden="true">2</span>Book your call</p>
 
-      <div class="book-fallback" data-book-fallback hidden>
-        <p><strong>Book your call about <span data-book-topic></span>.</strong> Send us a message with a few times that suit you, including your time zone, and we'll confirm with a calendar invite.</p>
+        <p class="book-placeholder" data-book-placeholder>Pick a topic above and your booking options appear here.</p>
+        <noscript>
+          <style>.book-placeholder { display: none; }</style>
+          <p>Message us with the topic and a few times that suit you: <a href="https://wa.me/{{ site.whatsapp }}">WhatsApp {{ site.phone_display }}</a> or <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+        </noscript>
+
+        <div class="book-embed" data-book-embed hidden>
+          <iframe title="Choose a time for your consultation" loading="lazy"></iframe>
+        </div>
+
+        <div class="book-fallback" data-book-fallback aria-live="polite" hidden>
+        <p><strong>Topic: <span data-book-topic></span>.</strong> Choose how to reach us and send a few times that suit you, with your time zone. We'll confirm with a calendar invite.</p>
         <div class="btn-row">
           <a class="btn btn-primary" href="#" data-book-wa data-track="whatsapp" target="_blank" rel="noopener">Book on WhatsApp</a>
           <a class="btn" href="#" data-book-mail data-track="email">Book by email</a>
           <a class="btn" href="/contact" data-book-form>Use the contact form</a>
         </div>
+        </div>
       </div>
     </div>
+
+    <ul class="call-list" role="list">
+      <li><svg class="icon"><use href="#i-check"/></svg><div><strong>30 minutes on video</strong><span>With a Google Meet link sent in your calendar invite.</span></div></li>
+      <li><svg class="icon"><use href="#i-check"/></svg><div><strong>Two SoNSo leads on the call</strong><span>The lead for your stage, plus a second lead for the connected view.</span></div></li>
+      <li><svg class="icon"><use href="#i-check"/></svg><div><strong>A clear next step</strong><span>You leave knowing which stage to fix first, whether or not you work with us.</span></div></li>
+      <li><svg class="icon"><use href="#i-check"/></svg><div><strong>Free, no obligation</strong><span>We don't quote prices on the site; we discuss them on the call.</span></div></li>
+    </ul>
   </div>
 </section>

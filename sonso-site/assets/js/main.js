@@ -1,6 +1,7 @@
 /* SoNSo site behaviour. No dependencies. */
 (function () {
   'use strict';
+  window.__sonsoReady = true; // tells the failsafe in head.html that this script loaded
   var cfg = window.SONSO || {};
   var $ = function (sel, root) { return (root || document).querySelector(sel); };
   var $$ = function (sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); };
@@ -124,7 +125,25 @@
     if (form) {
       var need = params.get('need');
       if (need) $$('input[name="stage"]', form).forEach(function (c) { if (c.value === need) c.checked = true; });
-      $('input[name="page"]', form).value = document.referrer ? new URL(document.referrer).pathname : location.pathname;
+
+      // Visitors arriving from a service CTA (e.g. "Get a website quote") see what they're asking about.
+      var needCopy = {
+        build: ['You\'re asking for a website quote.', 'For example: we need a six-page site with a booking form, and enquiries should go straight into our CRM.'],
+        automate: ['You\'re asking about automation and your CRM.', 'For example: leads arrive by email and WhatsApp, and someone copies them into a spreadsheet every day.'],
+        grow: ['You\'re asking about ads and lead generation.', 'For example: we spend on Meta ads every month but can\'t tell which campaigns bring customers.'],
+        measure: ['You\'re asking about dashboards and reporting.', 'For example: month-end reports take days, and sales and finance never agree on the numbers.']
+      }[need];
+      if (needCopy) {
+        var note = $('[data-need-note]');
+        note.textContent = needCopy[0] + ' Tell us a little about it and we\'ll come back with next steps.';
+        note.hidden = false;
+        $('#f-message', form).placeholder = needCopy[1];
+      }
+
+      // Record the page the visitor came from, but only if it's on this site.
+      var from = location.pathname;
+      try { var ref = new URL(document.referrer); if (ref.origin === location.origin) from = ref.pathname; else if (document.referrer) from = location.pathname + ' (from ' + ref.hostname + ')'; } catch (e) { /* no referrer */ }
+      $('input[name="page"]', form).value = from;
       try {
         $('input[name="utm_source"]', form).value = sessionStorage.getItem('utm_source') || '';
         $('input[name="utm_campaign"]', form).value = sessionStorage.getItem('utm_campaign') || '';
@@ -150,12 +169,18 @@
         var stages = data.getAll('stage').join(', ') || 'Not specified';
 
         if (!cfg.endpoint) {
-          // No endpoint configured yet: hand over to the visitor's email app with everything filled in.
+          // No lead endpoint configured yet. Don't rely on a mail app silently opening:
+          // show an explicit last step with WhatsApp and email, both pre-filled.
           var body = 'Name: ' + data.get('name') + '\nEmail: ' + data.get('email') + '\nCompany: ' + (data.get('company') || '-') +
             '\nPhone: ' + (data.get('phone') || '-') + '\nNeeds help with: ' + stages + '\nBudget: ' + (data.get('budget') || '-') +
             '\n\n' + data.get('message');
-          location.href = 'mailto:' + cfg.email + '?subject=' + encodeURIComponent('Enquiry from ' + data.get('name')) + '&body=' + encodeURIComponent(body);
-          track('generate_lead', { method: 'email_fallback', stage: stages });
+          var handoff = $('[data-form-handoff]', form);
+          $('[data-handoff-wa]', handoff).href = 'https://wa.me/' + cfg.whatsapp + '?text=' + encodeURIComponent('Hi SoNSo, new enquiry from the website.\n\n' + body);
+          $('[data-handoff-mail]', handoff).href = 'mailto:' + cfg.email + '?subject=' + encodeURIComponent('Enquiry from ' + data.get('name')) + '&body=' + encodeURIComponent(body);
+          handoff.hidden = false;
+          handoff.focus();
+          handoff.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
+          track('generate_lead', { method: 'handoff', stage: stages });
           return;
         }
 
@@ -182,10 +207,14 @@
       var embed = $('[data-book-embed]', picker);
       var fallback = $('[data-book-fallback]', picker);
       var frame = $('iframe', embed);
-      function choose(stage) {
+      var step2 = $('[data-book-step2]', picker);
+      var placeholder = $('[data-book-placeholder]', picker);
+      function choose(stage, reveal) {
         var input = $('input[value="' + stage + '"]', picker);
         if (!input) return;
         input.checked = true;
+        placeholder.hidden = true;
+        step2.classList.add('is-ready');
         var url = input.getAttribute('data-url');
         if (url) {
           if (frame.src !== url) frame.src = url;
@@ -198,9 +227,19 @@
           $('[data-book-mail]', fallback).href = 'mailto:' + cfg.email + '?subject=' + encodeURIComponent('Booking a call: ' + input.getAttribute('data-label')) + '&body=' + encodeURIComponent(msg + '\n\nTimes that suit me (with time zone):\n');
           $('[data-book-form]', fallback).href = '/contact?need=' + stage;
         }
+        if (reveal) {
+          // Step 2 often sits below the fold on phones: once it's filled in, bring it into view
+          // so the booking buttons are the next thing the visitor sees.
+          requestAnimationFrame(function () {
+            var r = step2.getBoundingClientRect();
+            if (r.top < 0 || r.bottom > window.innerHeight) {
+              step2.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+            }
+          });
+        }
         track('booking_topic', { stage: stage });
       }
-      $$('input[name="topic"]', picker).forEach(function (r) { r.addEventListener('change', function () { choose(r.value); }); });
+      $$('input[name="topic"]', picker).forEach(function (r) { r.addEventListener('change', function () { choose(r.value, true); }); });
       var pre = params.get('need');
       if (pre) choose(pre);
     }
