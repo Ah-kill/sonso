@@ -7,9 +7,9 @@ url: "https://sonso.co.in"
 
 # Contact details shown across the site
 email: "hello@sonso.co.in"
-phone_display: "+91 93260 87180"
-phone_link: "+919326087180"
-whatsapp: "919326087180"
+phone_display: "+91 74161 74547"
+phone_link: "+917416174547"
+whatsapp: "917416174547"
 
 # Google Calendar appointment schedule links (Calendar > Appointment schedule > Share > Booking page link).
 # One per routing row in the Technical Spec. Empty = the Book page shows email/WhatsApp instead.
