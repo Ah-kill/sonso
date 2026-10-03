@@ -20,7 +20,13 @@ function doPost(e) {
     return json({ ok: false, error: 'missing_fields' });
   }
 
-  const clip = (v, n) => String(v || '').slice(0, n);
+  // Trim to a max length, and stop Sheets reading visitor text as a formula: values starting with
+  // = + - @ (e.g. a phone number "+91 ...") would otherwise show #ERROR! or run as a formula.
+  // A leading apostrophe makes Sheets store the value as plain text and isn't displayed.
+  const clip = (v, n) => {
+    const s = String(v || '').slice(0, n);
+    return /^[=+\-@\t\r]/.test(s) ? "'" + s : s;
+  };
   const stages = (e.parameters.stage || []).join(', ');
 
   const lock = LockService.getScriptLock();
