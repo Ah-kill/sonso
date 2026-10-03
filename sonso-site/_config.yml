@@ -22,7 +22,7 @@ booking_measure: ""
 booking_unsure: ""
 
 # Apps Script web app URL (Deploy > New deployment > Web app). Empty = the form opens an email instead.
-lead_form_endpoint: "https://script.google.com/macros/s/AKfycbydRLNbtMvJAeYCq1VYheIh9J3USBhv1-VnnSjs6eVt2Vmi1II_BgvsUQ63xIl4Ph4Y/exec"
+lead_form_endpoint: "https://script.google.com/macros/s/AKfycbx3Z_5GAJe-l58vCOsS_i3ZJAVx5Cycyog459-hAr8_yH5YmtSbzYJCs1YXTaqlgA2f/exec"
 
 # Analytics. Empty = the tag is not loaded.
 ga4_id: ""
