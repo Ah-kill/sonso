@@ -31,7 +31,7 @@ All in `_config.yml`. Empty values switch the feature off safely.
 | Setting | What to paste | Until it's set |
 |---|---|---|
 | `booking_build` … `booking_unsure` | Google Calendar appointment schedule booking-page links (one per routing row in the spec) | The Book page offers WhatsApp, email and the contact form instead |
-| `lead_form_endpoint` | Apps Script web app URL (deploy `apps-script/Code.gs`) | The contact form opens the visitor's email app, pre-filled |
+| `lead_form_endpoint` | Apps Script web app URL (deploy `apps-script/Code.gs`) | The contact form asks the visitor to send via WhatsApp or email, pre-filled |
 | `ga4_id`, `meta_pixel_id`, `google_ads_id` | Tag IDs | No tracking scripts load |
 
 ## Build and preview

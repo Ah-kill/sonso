@@ -21,7 +21,8 @@ booking_grow: ""
 booking_measure: ""
 booking_unsure: ""
 
-# Apps Script web app URL (Deploy > New deployment > Web app). Empty = the form opens an email instead.
+# Apps Script web app URL (ends in /exec) from apps-script/Code.gs. Empty = the form offers WhatsApp/email to send instead.
+# After changing the script, redeploy the SAME deployment (Manage deployments > Edit > New version) to keep this URL.
 lead_form_endpoint: "https://script.google.com/macros/s/AKfycbx3Z_5GAJe-l58vCOsS_i3ZJAVx5Cycyog459-hAr8_yH5YmtSbzYJCs1YXTaqlgA2f/exec"
 
 # Analytics. Empty = the tag is not loaded.
