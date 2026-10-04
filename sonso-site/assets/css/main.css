@@ -940,3 +940,10 @@ body[data-page="book"] .wa-float { display: none; }
 
 /* Homepage picker: secondary link under the rows */
 .picker-more { margin-top: 1.5rem; }
+
+/* ---------- SoNSo Start page ---------- */
+.list-2col { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(2rem, 5vw, 4rem); row-gap: 1.1rem; }
+.list-2col strong { color: var(--ink); font-weight: 600; }
+@media (max-width: 679px) { .list-2col { grid-template-columns: minmax(0, 1fr); } }
+.fit-list--no li::before { background: var(--line-strong); }
+.list-note { margin-top: 2rem; }

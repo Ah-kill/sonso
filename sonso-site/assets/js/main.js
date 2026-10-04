@@ -134,7 +134,8 @@
         build: ['You\'re asking for a website quote.', 'For example: we need a six-page site with a booking form, and enquiries should go straight into our CRM.'],
         automate: ['You\'re asking about automation and your CRM.', 'For example: leads arrive by email and WhatsApp, and someone copies them into a spreadsheet every day.'],
         grow: ['You\'re asking about ads and lead generation.', 'For example: we spend on Meta ads every month but can\'t tell which campaigns bring customers.'],
-        measure: ['You\'re asking about dashboards and reporting.', 'For example: month-end reports take days, and sales and finance never agree on the numbers.']
+        measure: ['You\'re asking about dashboards and reporting.', 'For example: month-end reports take days, and sales and finance never agree on the numbers.'],
+        start: ['You\'re asking about SoNSo Start.', 'For example: the idea, who it\'s for, and what the first version must do.']
       }[need];
       if (needCopy) {
         var note = $('[data-need-note]');
