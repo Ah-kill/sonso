@@ -10,11 +10,9 @@ asset_version: "20261005-1"
 
 # Contact details shown across the site
 email: "hello@sonso.co.in"
-phone_display: "+91 74161 74547"
-phone_link: "+917416174547"
-whatsapp: "917416174547"
-phone2_display: "+91 86869 50859"
-phone2_link: "+918686950859"
+phone_display: "+91 93260 87182"
+phone_link: "+919326087182"
+whatsapp: "919326087182"
 
 # Google Calendar appointment schedule embed links, one per routing row in the Technical Spec.
 # In Google Calendar: open the appointment schedule > Share > "Website embed" > "Inline booking page",

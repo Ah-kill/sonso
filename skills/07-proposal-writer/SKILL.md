@@ -87,7 +87,7 @@ No monthly fee from us. No maintenance charges. No feature gates.
 Ready to go? Just reply "YES" and we'll start this week.
 
 **So N So**
-📱 WhatsApp: +919326087180
+📱 WhatsApp: +91 93260 87182
 🌐 sonoso.com
 ```
 
