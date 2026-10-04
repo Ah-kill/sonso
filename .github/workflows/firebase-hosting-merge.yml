@@ -24,7 +24,7 @@ jobs:
       - run: bundle exec jekyll build # outputs ./_site
       - name: Skip deploy (no Firebase key yet)
         if: env.HAS_FIREBASE_KEY != 'true'
-        run: echo "::notice::Build OK. Deploy skipped: add the FIREBASE_SERVICE_ACCOUNT_SONSO_CO secret to deploy from GitHub."
+        run: 'echo "::notice::Build OK. Deploy skipped: add the FIREBASE_SERVICE_ACCOUNT_SONSO_CO secret to deploy from GitHub."'
       - uses: FirebaseExtended/action-hosting-deploy@v0
         if: env.HAS_FIREBASE_KEY == 'true'
         with:
