@@ -942,6 +942,18 @@ body[data-page="book"] .wa-float { display: none; }
 .picker-more { margin-top: 1.5rem; }
 
 /* ---------- SoNSo Start page ---------- */
+.start-lockup { display: flex; flex-wrap: wrap; align-items: center; gap: .9rem 1.75rem; margin-bottom: clamp(1.75rem, 4vw, 2.75rem); }
+.start-name {
+  font-size: clamp(3.25rem, 1.9rem + 6vw, 7rem); font-weight: 700; font-stretch: 92%;
+  letter-spacing: -.045em; line-height: .92; color: var(--ink);
+}
+.start-name span, .start-name i { color: var(--accent); font-style: normal; }
+.start-pill {
+  display: inline-flex; align-items: center; gap: .5rem; padding: .45rem .9rem; border-radius: 999px;
+  background: var(--accent-soft); color: var(--accent);
+  font-size: .8125rem; font-weight: 650; letter-spacing: .1em; text-transform: uppercase; line-height: 1.2;
+}
+.start-pill::before { content: ""; width: .5rem; height: .5rem; border-radius: 2px; background: currentColor; flex: none; }
 .list-2col { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(2rem, 5vw, 4rem); row-gap: 1.1rem; }
 .list-2col strong { color: var(--ink); font-weight: 600; }
 @media (max-width: 679px) { .list-2col { grid-template-columns: minmax(0, 1fr); } }

@@ -6,7 +6,7 @@ title: "SoNSo"
 url: "https://sonso.co.in"
 
 # Bump this whenever CSS or JS changes, so browsers download the new files immediately.
-asset_version: "20261005-2"
+asset_version: "20261005-3"
 
 # Contact details shown across the site
 email: "hello@sonso.co.in"
