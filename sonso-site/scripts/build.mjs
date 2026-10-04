@@ -1,6 +1,6 @@
 // Local stand-in for `jekyll build`, for machines without Ruby.
 // Supports only the Liquid used on this site: layouts, {% include file k="v" %},
-// {{ page.x }}, {{ site.x }}, {{ include.x }}, {{ content }}, and the `| default: "..."` filter.
+// {{ page.x }}, {{ site.x }}, {{ include.x }}, {{ content }}, and the `| default: "..."` / `| default: page.y` filter.
 // Anything else throws, so the site stays buildable by real Jekyll in GitHub Actions.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -45,8 +45,8 @@ function render(src, ctx, file) {
   });
   const stray = src.match(/\{%.*?%\}/);
   if (stray) throw new Error(`${file}: unsupported Liquid tag ${stray[0]}`);
-  return src.replace(/\{\{-?\s*([\w.]+)\s*(?:\|\s*default:\s*(?:"([^"]*)"|'([^']*)')\s*)?-?\}\}/g,
-    (_, expr, d1, d2) => String(lookup(ctx, expr) || (d1 ?? d2 ?? '')))
+  return src.replace(/\{\{-?\s*([\w.]+)\s*(?:\|\s*default:\s*(?:"([^"]*)"|'([^']*)'|([\w.]+))\s*)?-?\}\}/g,
+    (_, expr, d1, d2, d3) => String(lookup(ctx, expr) || (d1 ?? d2 ?? (d3 ? lookup(ctx, d3) : ''))))
     .replace(/\{\{.*?\}\}/g, (m) => { throw new Error(`${file}: unsupported Liquid output ${m}`); });
 }
 

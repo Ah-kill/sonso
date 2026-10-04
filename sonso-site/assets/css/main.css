@@ -346,6 +346,8 @@ a.card:hover, .card--link:hover { border-color: var(--line-strong); box-shadow: 
 .hero-title { display: flex; flex-direction: column; }
 .hero-title span { display: block; }
 .hero-title i { font-style: normal; color: var(--stage); }
+.hero-tagline { margin-top: 1.25rem; font-size: clamp(1.125rem, 1.05rem + .45vw, 1.375rem); font-weight: 600; letter-spacing: -.01em; color: var(--ink); }
+.hero-tagline + .lede { margin-top: .75rem; }
 .hero .lede { margin-top: 1.75rem; max-width: 33em; color: #46505E; }
 .hero .btn-row { margin-top: 2.25rem; }
 .hero-note { margin-top: 1.25rem; font-size: .9rem; color: var(--muted); display: flex; align-items: center; gap: .5rem; }
@@ -824,6 +826,8 @@ body[data-page="book"] .wa-float { display: none; }
 .footer-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.5fr) minmax(0, .7fr) minmax(0, .9fr); gap: 2.5rem; }
 .footer-brand { display: grid; gap: 1.25rem; justify-items: start; align-content: start; max-width: 22rem; }
 .footer-brand p { line-height: 1.55; }
+.footer-tagline { color: #fff; }
+.footer-tagline em { color: #A9B4C2; }
 .footer-title { font-size: .75rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #8794A5; margin-bottom: 1rem; }
 .footer-col ul { list-style: none; padding: 0; display: grid; gap: .7rem; }
 .footer-col a { color: #D5DCE5; text-decoration: none; display: inline-flex; align-items: baseline; gap: .6rem; line-height: 1.4; }
@@ -903,3 +907,10 @@ body[data-page="book"] .wa-float { display: none; }
 .related a { color: var(--ink); font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--line-strong); line-height: 1.5; }
 .related a:hover { border-color: var(--ink); }
 .contact-method a:not(.btn) + a:not(.btn) { margin-top: .15rem; }
+
+/* ---------- Name teaser strip (homepage) ---------- */
+.name-strip { border-bottom: 1px solid var(--line); }
+.name-strip-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem 3rem; flex-wrap: wrap; }
+.name-strip-inner > div { max-width: 40rem; }
+.name-strip-inner p { margin-top: .6rem; color: var(--muted); font-size: 1.0625rem; }
+@media (max-width: 599px) { .name-strip-inner .btn { width: 100%; justify-content: center; } }
