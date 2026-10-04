@@ -914,3 +914,29 @@ body[data-page="book"] .wa-float { display: none; }
 .name-strip-inner > div { max-width: 40rem; }
 .name-strip-inner p { margin-top: .6rem; color: var(--muted); font-size: 1.0625rem; }
 @media (max-width: 599px) { .name-strip-inner .btn { width: 100%; justify-content: center; } }
+
+/* ---------- Section foot: closing line + CTA under a grid ---------- */
+.section-foot { margin-top: clamp(2.5rem, 5vw, 3.5rem); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.25rem 2rem; }
+.section-foot p { max-width: 40em; font-size: 1.0625rem; color: var(--text); }
+@media (max-width: 599px) { .section-foot .btn { width: 100%; } }
+
+/* ---------- Beyond the CRM cards (Automate) ---------- */
+.beyond-benefit { font-weight: 600; color: var(--ink); line-height: 1.45; }
+.beyond-example { margin-top: auto; padding-top: .9rem; border-top: 1px solid var(--line); font-size: .9375rem; line-height: 1.5; color: var(--muted); }
+.beyond-example span { display: block; margin-bottom: .3rem; font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--faint); }
+.beyond-example a { color: var(--stage, var(--accent)); font-weight: 600; text-underline-offset: 3px; }
+
+/* ---------- Complete systems blueprints (Services) ---------- */
+.blueprint-card { gap: 1rem; }
+.blueprint-for { font-size: .975rem; color: var(--muted); line-height: 1.5; }
+.blueprint-for span { font-weight: 600; color: var(--ink); }
+.blueprint-stages { display: grid; gap: 1rem; padding-top: 1.1rem; border-top: 1px solid var(--line); }
+.blueprint-stages > div { display: grid; gap: .4rem; }
+.blueprint-stages dd { font-size: .9375rem; line-height: 1.5; color: var(--text); }
+.blueprint-card--open,
+.section--mist .blueprint-card--open { background: transparent; border: 1.5px dashed var(--line-strong); box-shadow: none; }
+.blueprint-card--open > p:not(.blueprint-for):not(.card-foot) { font-size: 1rem; color: var(--text); }
+.systems-steps-title { margin: clamp(3.5rem, 7vw, 5rem) 0 2rem; }
+
+/* Homepage picker: secondary link under the rows */
+.picker-more { margin-top: 1.5rem; }
